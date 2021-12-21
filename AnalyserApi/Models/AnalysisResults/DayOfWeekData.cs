@@ -1,10 +1,8 @@
-﻿using System;
-
-namespace AnalyserApi.Models.AnalysisResults;
+﻿namespace AnalyserApi.Models.AnalysisResults;
 
 public class DayOfWeekData
 {
-    public DayOfWeekData(DayOfWeekData data)
+    protected DayOfWeekData(DayOfWeekData data)
     {
         Monday = data.Monday;
         Tuesday = data.Tuesday;
@@ -20,11 +18,12 @@ public class DayOfWeekData
         Thursday = null;
         Friday = null;
     }
-    public decimal? Monday { get; private set; }
-    public decimal? Tuesday { get; private set; }
-    public decimal? Wednesday { get; private set; }
-    public decimal? Thursday { get; private set; }
-    public decimal? Friday { get; private set; }
+
+    private decimal? Monday { get; set; }
+    private decimal? Tuesday { get; set; }
+    private decimal? Wednesday { get; set; }
+    private decimal? Thursday { get; set; }
+    private decimal? Friday { get; set; }
 
     public DayOfWeekData AddDay(DayOfWeek day, decimal value)
     {

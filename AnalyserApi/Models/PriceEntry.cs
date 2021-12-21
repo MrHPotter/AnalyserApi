@@ -10,10 +10,6 @@ namespace AnalyserApi.Models;
 
 public class PriceEntry
 {
-    public PriceEntry()
-    {
-
-    }
     public PriceEntry(DateTimeOffset dateAndTime, decimal open, decimal high,
         decimal low, decimal close, string symbol)
     {
@@ -35,14 +31,20 @@ public class PriceEntry
         Symbol = symbol;
     }
 
-    public DateTimeOffset DateAndTime { get; set; }
-    public decimal Open { get; set; }
-    public decimal High { get; set; }
-    public decimal Low { get; set; }
-    public decimal Close { get; set; }
+    public DateTimeOffset DateAndTime { get; }
+    public decimal Open { get; }
+    public decimal High { get; }
+    public decimal Low { get; }
+    public decimal Close { get; }
     public DayOfWeek Day => DateAndTime.DayOfWeek;
     public DateOnly Date => DateAndTime.DateOnly();
-    public string Symbol { get; set; }
+    public string Symbol { get; }
+
+    public override int GetHashCode()
+    {
+        var hashBase = (Open + High - Close - Low)*(int)Day;
+        return hashBase.GetHashCode();
+    }
 
     public override bool Equals(object? obj)
     {

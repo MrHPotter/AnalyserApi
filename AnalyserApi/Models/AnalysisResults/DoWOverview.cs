@@ -4,14 +4,14 @@ namespace AnalyserApi.Models.AnalysisResults;
 
 public class DoWOverview : DayOfWeekData
 {
-    public DoWOverview(string symbol, string range, string method)
+    public DoWOverview(string symbol, CandleRange range, string method)
     {
         Symbol = symbol;
         Method = method;
         Range = range;
     }
 
-    public DoWOverview(DayOfWeekData data, string symbol, string range, string method, DayFilter dayFilter) : base(data)
+    public DoWOverview(DayOfWeekData data, string symbol, CandleRange range, string method, DayFilter dayFilter) : base(data)
     {
         Symbol = symbol;
         Method = method;
@@ -22,7 +22,7 @@ public class DoWOverview : DayOfWeekData
 
     public string Method { get; set; }
 
-    public string Range { get; set; }
+    public CandleRange Range { get; set; }
 
     public DayFilter DayFilter { get; set; }
 }

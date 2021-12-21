@@ -1,6 +1,4 @@
 ﻿using AnalyserApi.Models.HelperModels;
-using System;
-using TradingCsvAnalyser.Models;
 
 namespace AnalyserApi.Extensions;
 

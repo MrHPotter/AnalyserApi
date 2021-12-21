@@ -2,7 +2,6 @@
 using AnalyserApi.Extensions.DataModels;
 using AnalyserApi.Models.AnalysisResults;
 using AnalyserApi.Models.HelperModels;
-using System;
 
 namespace AnalyserApi.Managers;
 

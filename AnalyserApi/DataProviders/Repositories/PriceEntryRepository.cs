@@ -1,10 +1,6 @@
 ﻿using AnalyserApi.Extensions.DataModels;
 using AnalyserApi.Models;
 using AnalyserApi.Models.Database;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using TradingCsvAnalyser.Extensions;
 
 namespace AnalyserApi.DataProviders.Repositories;
 

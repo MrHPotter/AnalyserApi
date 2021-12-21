@@ -10,7 +10,9 @@ var configBuilder = new ConfigurationBuilder()
 var config = configBuilder.Build();
 
 builder.Services.ConfigureServices(config);
-builder.Services.AddControllers();
+builder.Services.AddControllers().AddControllersAsServices();
+
+
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

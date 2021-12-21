@@ -1,6 +1,6 @@
 ﻿using AnalyserApi.Models.AnalysisResults;
 using AnalyserApi.Models.HelperModels;
-using TradingCsvAnalyser.Models.Enums;
+
 
 namespace AnalyserApi.Managers;
 

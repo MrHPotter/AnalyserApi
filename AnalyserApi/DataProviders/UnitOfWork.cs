@@ -1,6 +1,5 @@
 ﻿using AnalyserApi.DataProviders.Repositories;
 using AnalyserApi.Models.Database;
-using Microsoft.EntityFrameworkCore;
 
 namespace AnalyserApi.DataProviders;
 
