@@ -25,9 +25,4 @@ public class DayOfWeekController : ControllerBase
         return _dataManager.CallMethodByName(method, parameters);
     }
 
-    [HttpGet("methods")]
-    public ActionResult<string[]> GetAvailableMethods()
-    {
-        return _dataManager.GetDayOfWeekMethods();
-    }
 }

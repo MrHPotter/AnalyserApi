@@ -6,7 +6,7 @@ namespace AnalyserApi.Extensions;
 public static class ManagerExtensions
 {
     
-    public static string[] GetDayOfWeekMethods<T>(this T manager)
+    public static string[] GetMethodNames<T>(this T manager)
     {
         return manager is null ? Array.Empty<string>() :
             manager.GetType().Methods().Where(m => m.Name != GlobalConstants.CallerMethodName)
