@@ -4,6 +4,7 @@ namespace AnalyserApi.Models.HelperModels;
 
 public class DoWDefaultParameters
 {
+    public DoWDefaultParameters(){}
     public DoWDefaultParameters(CandleRange rangeType, string symbol, DayFilter dayFilter)
     {
         RangeType = rangeType;
@@ -11,7 +12,7 @@ public class DoWDefaultParameters
         DayFilter = dayFilter;
     }
 
-    public CandleRange RangeType { get; private set; }
-    public string Symbol { get; private set; }
-    public DayFilter DayFilter { get; private set; }
+    public CandleRange RangeType { get; set; }
+    public string Symbol { get; set; }
+    public DayFilter DayFilter { get; set; }
 }

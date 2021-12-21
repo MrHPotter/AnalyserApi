@@ -1,5 +1,7 @@
+using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 using AnalyserApi.Extensions;
+using AnalyserApi.Models.Database;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,7 +12,14 @@ var configBuilder = new ConfigurationBuilder()
 var config = configBuilder.Build();
 
 builder.Services.ConfigureServices(config);
-builder.Services.AddControllers().AddControllersAsServices();
+builder.Services.AddControllers().AddControllersAsServices().AddJsonOptions
+    (o =>
+    {
+        o.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
+        o.AllowInputFormatterExceptionMessages = true;
+        o.JsonSerializerOptions.IncludeFields = true;
+        o.JsonSerializerOptions.PropertyNameCaseInsensitive = true;
+    });
 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -27,9 +36,11 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseRouting();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.Services.GetRequiredService<AnalyserContext>().Database.Migrate();
 
 app.Run();

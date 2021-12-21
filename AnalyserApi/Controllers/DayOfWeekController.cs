@@ -1,6 +1,8 @@
-﻿using AnalyserApi.Extensions;
+﻿using System.ComponentModel.DataAnnotations;
+using AnalyserApi.Extensions;
 using AnalyserApi.Managers;
 using AnalyserApi.Models.AnalysisResults;
+using AnalyserApi.Models.Enums;
 using AnalyserApi.Models.HelperModels;
 using Microsoft.AspNetCore.Mvc;
 
@@ -18,7 +20,7 @@ public class DayOfWeekController : ControllerBase
     }
 
     [HttpGet("{method}")]
-    public ActionResult<DayOfWeekData> Analyse(string method,[FromQuery]DoWDefaultParameters parameters)
+    public ActionResult<DayOfWeekData> Analyse(string method, [FromQuery] DoWDefaultParameters parameters)
     {
         return _dataManager.CallMethodByName(method, parameters);
     }
