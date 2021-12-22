@@ -41,7 +41,7 @@ namespace AnalyserApi.Migrations
 
                     b.HasKey("Symbol", "DateAndTime");
 
-                    b.ToTable("PriceEntries");
+                    b.ToTable("PriceEntries", (string)null);
                 });
 #pragma warning restore 612, 618
         }

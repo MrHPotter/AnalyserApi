@@ -21,6 +21,7 @@ public static class ServiceCollectionExtensions
         services.AddSingleton<IAnalyserConfig, AnalyserConfig>(_ => config);
         services.AddSingleton<IUnitOfWork, UnitOfWork>();
         services.AddTransient<IDayOfWeekDataManager, DayOfWeekDataManager>();
+        services.AddTransient<IChoiceManager, ChoiceManager>();
     }
 
     private static void AddDbContext<TContext>(this IServiceCollection services, IAnalyserConfig config)
